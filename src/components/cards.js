@@ -58,11 +58,11 @@ function Game() {
     setFlipped([]);
     setMatched([]);
     setShowAlert(false);
-  }
+  };
 
   const handlePlayAgain = () => {
     resetGame();
-  }
+  };
 
   return (
     <div className="cardsContainer">
@@ -78,18 +78,19 @@ function Game() {
 
       {/* Bootstrap Alert for game completion */}
       {showAlert && (
-        <Alert show={showAlert} variant="success">
-          <Alert.Heading>Congratulations!</Alert.Heading>
-          <p>You have matched all the cards!</p>
-          <hr />
-          <div className="d-flex justify-content-end">
-            <Button onClick={handlePlayAgain} variant="outline-success">
-              Play Again
-            </Button>
-          </div>
-        </Alert>
+        <div className="alert-container">
+          <Alert show={showAlert} variant="success" className="alert">
+            <Alert.Heading>Congratulations!</Alert.Heading>
+            <p>You have matched all the cards!</p>
+            <hr />
+            <div className="d-flex justify-content-end">
+              <Button onClick={handlePlayAgain} variant="outline-success">
+                Play Again
+              </Button>
+            </div>
+          </Alert>
+        </div>
       )}
-
     </div>
   );
 }
